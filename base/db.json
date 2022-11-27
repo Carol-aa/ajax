@@ -1,0 +1,88 @@
+{
+    "data": {
+        "list": [
+            {
+                "name": "今日推荐假的1",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的2",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的3",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的4",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的5",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的6",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的7",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的8",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            },
+            {
+                "name": "今日推荐假的9 ",
+                "imgUrl": "http://img1.lukou.com/static/p/fb/tab/1/20181211-151644.jpeg"
+            }
+        ],
+        "users": [
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名2"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            },
+            {
+                "name": "用户名1"
+            }
+        ]
+    },
+    "details": [
+        {
+            "age": 10
+        }
+    ]
+}

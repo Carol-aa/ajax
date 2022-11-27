@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const getHandle = () => {
+            fetch("http://localhost:8090/user?id=1")
+                .then((res) => {
+                    if (res.ok) {
+                        return res.json();
+                    } else {
+                        return Promise.reject({
+                            status: res.status,
+                            statusText: res.statusText
+                        })
+                    }
+
+                })
+                .then((res) => {
+                    console.log(res)
+                })
+                .catch(error => {
+                    console.log(error, "error")
+                })
+
+        }
+        const postHandle = () => {
+            fetch("http://localhost:8090/users", {
+                method: "POST",
+                headers: {
+                    // "content-type": "application/x-www-form-urlencoded"
+                    "content-type": "application/json"
+                },
+                // body: ["name=wang&age=20","name=zhang&age=40","name=zhang&age=30"]
+                body: JSON.stringify({
+                    name: "post",
+                    age: "100"
+                })
+            }).
+                then(res => res.json())
+                .then(res => { console.log(res) });
+        }
+        const putHandle = () => {
+            fetch("http://localhost:8090/users/2", {
+                method: "PUT",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify({
+                    name: "putchange",
+                    age: "21"
+                })
+            }).then(res => res.json()).then(res => { console.log(res) })
+        }
+        const patchHandle = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("PATCH", "http://localhost:8090/users/2", true)//4:id
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(JSON.stringify(
+                {
+                    name: "change",
+
+                }
+            ))
+            console.log(xhr.responseText)
+        }
+        const deleteHandle = () => {
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "http://localhost:8090/users/2", true)//4:id
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(JSON.stringify(
+                {
+                    name: "change",
+
+                }
+            ))
+            console.log(xhr.responseText)
+        }
+    </script>
+</head>
+<body>
+    <button id="btn" onclick="getHandle()">get</button>
+    <button id="btn" onclick="postHandle()">post</button>
+    <button id="btn" onclick="deleteHandle()">delete</button>
+    <button id="btn" onclick="putHandle()">put</button>
+    <button id="btn" onclick="patchHandle()">patch</button>
+
+</body>
+
+</html>

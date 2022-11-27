@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const getHandle = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("get", "http://localhost:8090/data", true);
+            xhr.send();
+            console.log("get")
+            xhr.onload = () => {
+                console.log(xhr.status)
+                if (xhr.status == 200) {
+                    console.log(JSON.parse(xhr.responseText))
+                }
+
+            }
+        }
+        const postHandle = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("POST", "http://localhost:8090/users", true);
+            xhr.setRequestHeader("content-type", "application/json")
+            xhr.send(JSON.stringify({
+                name: "zhang",
+                age: 90
+            }))
+            xhr.onload = () => {
+                if (/^2\d{2}$/.test(xhr.status)) {
+                    console.log(JSON.parse(xhr.responseText))
+                }
+            }
+        }
+        const putHandle = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("PUT", "http://localhost:8090/users/4", true)//4:id
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(JSON.stringify(
+                {
+                    name: "change",
+                    age: 100
+                }
+            ))
+            console.log(xhr.responseText)
+        }
+        const patchHandle = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.open("PATCH", "http://localhost:8090/users/2", true)//4:id
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(JSON.stringify(
+                {
+                    name: "change",
+
+                }
+            ))
+            console.log(xhr.responseText)
+        }
+        const deleteHandle = () => {
+
+            let xhr = new XMLHttpRequest();
+            xhr.open("DELETE", "http://localhost:8090/users/2", true)//4:id
+            xhr.setRequestHeader("content-type", "application/json");
+            xhr.send(JSON.stringify(
+                {
+                    name: "change",
+
+                }
+            ))
+            console.log(xhr.responseText)
+        }
+    </script>
+</head>
+
+<body>
+    <button id="btn" onclick="getHandle()">get</button>
+    <button id="btn" onclick="postHandle()">post</button>
+    <button id="btn" onclick="deleteHandle()">delete</button>
+    <button id="btn" onclick="putHandle()">put</button>
+    <button id="btn" onclick="patchHandle()">patch</button>
+
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+        content="IE=edge">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="div">
+        ajax
+        <button id="handlebtn">发送</button>
+        <div id="mydiv">
+            接收的数据：
+        </div>
+    </div>
+    <script>
+
+        let btn = document.getElementById('handlebtn');
+        btn.onclick = () => {
+            // console.log("发送成功")
+            let xhr=new XMLHttpRequest();
+            xhr.onreadystatechange=()=>{
+                console.log(xhr.readyState,'2')
+            }
+            xhr.open("GET",'heep');
+            xhr.send()
+        }
+    </script>
+</body>
+
+</html>

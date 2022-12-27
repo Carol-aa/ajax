@@ -1,5 +1,5 @@
 const express = require('express')
-
+const jwt = require('jsonwebtoken')
 const app = express();
 
 // import 'core-js/features/array/at'
@@ -9,12 +9,15 @@ const STU_ARR = [
     { id: "2", name: "张荣", age: 20, address: "北京" },
     { id: "3", name: "王俊辰", age: 20, address: "内蒙古" },
 ]
-
+// app.use((req,res)=>{
+//     res.setHeader('Access-Control-Allow-Origin','*')
+// })//无效  不知道为啥
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 // 定义学生信息路由
 app.get('/students', (req, res) => {
     //返回学生信息
+    res.setHeader('Access-Control-Allow-Origin', '*')
 
     res.send({
         status: "ok",
@@ -41,6 +44,7 @@ app.post('/students', (req, res) => {
 
 // 查询某个学生的信息
 app.get('/students/:id', (req, res) => {
+    res.setHeader('Access-Control-Allow-Origin', '*')
     // req.params//{id:2}
     const id = req.params.id;
     const student = STU_ARR.find(item => item.id === id)
@@ -93,6 +97,6 @@ app.put('/students/:id', (req, res) => {
         data: STU_ARR
     })
 })
-app.listen(3000, () => {
+app.listen(3001, () => {
     console.log("服务器已启动")
 })

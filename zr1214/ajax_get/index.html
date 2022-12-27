@@ -21,14 +21,19 @@
     <script>
 
         let btn = document.getElementById('handlebtn');
-        btn.onclick = () => {
-            // console.log("发送成功")
-            let xhr=new XMLHttpRequest();
-            xhr.onreadystatechange=()=>{
-                console.log(xhr.readyState,'2')
+        btn.onclick = async () => {
+            try {
+                const res = await fetch('http://localhost:3001/students')
+                const data = await res.json()
+                console.log(data)
+                if (data.status) {
+                    const myDiv = document.getElementById("mydiv");
+                    myDiv.innerHTML = data.data[0].id
+                }
+
+            } catch (err) {
+
             }
-            xhr.open("GET",'heep');
-            xhr.send()
         }
     </script>
 </body>

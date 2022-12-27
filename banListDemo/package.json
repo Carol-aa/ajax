@@ -1,0 +1,12 @@
+{
+  "name": "my_server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "core-js": "^3.26.1",
+    "express": "^4.18.2",
+    "i": "^0.3.7",
+    "jsonwebtoken": "^8.5.1"
+  }
+}
